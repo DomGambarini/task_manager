@@ -50,7 +50,7 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/signin", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         # check if username exists in db
@@ -91,7 +91,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/logout")
+@app.route("/signout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
